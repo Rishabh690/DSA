@@ -12,6 +12,7 @@ class Solution(object):
         # return longest
         mp = defaultdict(int)
         res = 0
+# [100,4,200,1,3,2]
 
         for num in nums:
             if not mp[num]:
@@ -19,4 +20,5 @@ class Solution(object):
                 mp[num - mp[num - 1]] = mp[num]
                 mp[num + mp[num + 1]] = mp[num]
                 res = max(res, mp[num])
+               
         return res

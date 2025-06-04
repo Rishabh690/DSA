@@ -1,6 +1,8 @@
 class Solution(object):
     def isValid(self, s):
         l = []
+        if len(s) %2 !=0:
+            return False
         if s[0]==")" or s[0]=="]" or s[0]=='}':
             return False
         for i in s:

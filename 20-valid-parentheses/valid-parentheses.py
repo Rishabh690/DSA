@@ -1,5 +1,20 @@
 class Solution(object):
     def isValid(self, s):
+        result=[]
+        opentoclose = {")":"(","]":"[","}":"{"}
+
+        for i in s:
+            if i in opentoclose:
+                if result and result[-1] == opentoclose[i]:
+                    result.pop()
+                else:
+                    return False
+            else:
+                result.append(i)
+        return True if not result else False
+       
+       
+       
         # l = []
         # if s[0]==")" or s[0]=="]" or s[0]=='}':
         #     return False
@@ -17,17 +32,5 @@ class Solution(object):
         # return not l
             
         
-        result=[]
-        poojan = {")":"(","]":"[","}":"{"}
-
-        for i in s:
-            if i in poojan:
-                if result and result[-1] == poojan[i]:
-                    result.pop()
-                else:
-                    return False
-            else:
-                result.append(i)
-        return True if not result else False
-        
+         
         

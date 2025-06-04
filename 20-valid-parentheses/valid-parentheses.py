@@ -1,6 +1,8 @@
 class Solution(object):
     def isValid(self, s):
         l = []
+        if s[0]==")" or s[0]=="]" or s[0]=='}':
+            return False
         for i in s:
             if i == '(' or i == '{' or i == '[':
                 l.append(i)

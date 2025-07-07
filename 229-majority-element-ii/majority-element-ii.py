@@ -1,6 +1,6 @@
 class Solution(object):
     def majorityElement(self, nums):
-        if len(nums) == 1:
+        if len(nums) == 1 or len(nums) == 0:
             return nums
         res={}
         n=(len(nums) / 3)
